@@ -38,8 +38,8 @@ class Config:
         
         # Application settings
         self.daily_check_time = os.getenv('DAILY_CHECK_TIME', '08:00')  # 8:00 AM default
-        self.lookforward_days = int(os.getenv('LOOKFORWARD_DAYS', '3'))  # Look 3 days ahead by default
-        self.check_on_startup = os.getenv('CHECK_ON_STARTUP', 'false').lower() == 'true'
+        self.lookforward_days = int(os.getenv('LOOKFORWARD_DAYS', '7'))  # Look 7 days ahead by default
+        self.check_on_startup = os.getenv('CHECK_ON_STARTUP', 'true').lower() == 'true'
         
         # Development settings
         self.debug = os.getenv('DEBUG', 'false').lower() == 'true'
