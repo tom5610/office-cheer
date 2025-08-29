@@ -1,0 +1,13 @@
+# Core dependencies
+strands-agents>=0.1.0  # Strands Agents SDK
+schedule>=1.1.0        # Scheduling library
+boto3>=1.28.0          # AWS SDK
+python-dotenv>=1.0.0   # Environment variable management
+click>=8.1.3           # Command line interface
+
+# Database
+SQLAlchemy>=2.0.0      # SQL toolkit and ORM
+
+# Testing
+pytest>=7.3.1          # Testing framework
+pytest-mock>=3.10.0    # Mocking library for pytest
