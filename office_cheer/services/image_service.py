@@ -269,4 +269,4 @@ class ImageService:
         Returns:
             bool: True if in development mode
         """
-        return self.config.debug or not (self.config.aws_access_key_id and self.config.aws_secret_access_key)
+        return True #self.config.debug or not (self.config.aws_access_key_id and self.config.aws_secret_access_key)

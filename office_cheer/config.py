@@ -18,14 +18,14 @@ class Config:
         
         # AWS settings
         self.aws_region = os.getenv('AWS_REGION', 'us-east-1')
-        self.aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
-        self.aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
+        # self.aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
+        # self.aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
         
         # Bedrock settings for LLM
-        self.bedrock_model_id = os.getenv('BEDROCK_MODEL_ID', 'anthropic.claude-3-sonnet-20240229-v1:0')
+        self.bedrock_model_id = os.getenv('BEDROCK_MODEL_ID', 'us.anthropic.claude-3-7-sonnet-20250219-v1:0')
         
         # Bedrock settings for image generation
-        self.bedrock_image_model_id = os.getenv('BEDROCK_IMAGE_MODEL_ID', 'amazon.nova-2')
+        self.bedrock_image_model_id = os.getenv('BEDROCK_IMAGE_MODEL_ID', 'amazon.nova-canvas-v1:0')
         
         # Email settings
         self.email_sender = os.getenv('EMAIL_SENDER', 'noreply@example.com')
@@ -50,11 +50,11 @@ class Config:
     def _validate_config(self):
         """Validate the configuration settings."""
         # Ensure AWS credentials are set in production
-        if not self._is_development() and (not self.aws_access_key_id or not self.aws_secret_access_key):
-            raise ValueError(
-                "AWS credentials are required in production. "
-                "Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables."
-            )
+        # if not self._is_development() and (not self.aws_access_key_id or not self.aws_secret_access_key):
+        #     raise ValueError(
+        #         "AWS credentials are required in production. "
+        #         "Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables."
+        #     )
     
     def _is_development(self):
         """Check if the application is running in development mode."""

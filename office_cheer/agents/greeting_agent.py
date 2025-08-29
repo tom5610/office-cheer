@@ -5,7 +5,8 @@ import logging
 import json
 from typing import List, Dict, Any, Optional
 
-from strands import Agent, BedrockModel, tool
+from strands import Agent, tool
+from strands.models import BedrockModel
 
 from office_cheer.db.models import Staff
 
@@ -356,8 +357,8 @@ def create_greeting_agent(config):
         bedrock_model = BedrockModel(
             model_id=config.bedrock_model_id,
             region=config.aws_region,
-            access_key_id=config.aws_access_key_id,
-            secret_access_key=config.aws_secret_access_key
+            # access_key_id=config.aws_access_key_id,
+            # secret_access_key=config.aws_secret_access_key
         )
         
         # Create the Strands Agent with tools
